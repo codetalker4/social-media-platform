@@ -18,6 +18,7 @@ const Chat = ({email}) => {
     const rooms = async () => {
         const res = await fetch('https://sma13.herokuapp.com/room1',{
             method:'POST',
+            mode:'no-cors',
             headers:{'Content-Type': 'application/json'}
         })
         const data = await res.json()
@@ -79,6 +80,7 @@ const Chat = ({email}) => {
                                     settoggle(true)
                                     const res = await fetch('https://sma13.herokuapp.com/room1', {
                                         method: 'POST',
+                                        mode:'no-cors',
                                         headers: {'Content-Type':'application/json'},
                                         body: JSON.stringify({
                                             email: email
@@ -102,6 +104,7 @@ const Chat = ({email}) => {
                                         })
                                         const res = await fetch('https://sma13.herokuapp.com/room1',{
                                             method:'POST',
+                                            mode:'no-cors',
                                             headers: {'Content-Type': 'application/json'},
                                             body: JSON.stringify({
                                                 room: document.getElementById('roomname').value,

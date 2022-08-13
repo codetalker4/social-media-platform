@@ -13,6 +13,7 @@ const Signin = ({islogged, fetchemail}) => {
     const clk = async () => {
         const res = await fetch('https://sma13.herokuapp.com/signin',{
             method:'POST',
+            mode:'no-cors',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
                 email,pass

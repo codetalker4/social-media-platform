@@ -15,6 +15,7 @@ const Wordbot = () => {
     const clk = async (e) => {
         await fetch('https://sma13.herokuapp.com/wbot', {
             method:'POST',
+            mode:'no-cors',
             headers:{
                 'Content-Type': 'application/json',
             },
@@ -22,7 +23,7 @@ const Wordbot = () => {
         })
     }
     const clk1 = async () => {
-        const res = await fetch('https://sma13.herokuapp.com/wbot/test')
+        const res = await fetch('https://sma13.herokuapp.com/wbot/test', {mode:'no-cors'})
         const data = JSON.parse(await res.json())
         setgameword(data)
     }

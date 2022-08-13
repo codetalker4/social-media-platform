@@ -70,6 +70,7 @@ const Signup = () => {
                     if (match && stat) {
                             fetch('https://sma13.herokuapp.com/signup', {
                                 method:'POST',
+                                mode:'no-cors',
                                 headers:{
                                     'Content-Type': 'application/json'
                                 },

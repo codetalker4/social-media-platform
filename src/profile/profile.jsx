@@ -19,6 +19,7 @@ const Profile = ({email}) => {
         if (name.length > 5) {
             const res = await fetch('https://sma13.herokuapp.com/profileedit', {
                 method:'POST',
+                mode:'no-cors',
                 headers:{'Content-Type':'application/json'},
                 body: JSON.stringify({
                     email,
@@ -47,6 +48,7 @@ const Profile = ({email}) => {
         if (title.length > 5 && body.length > 10 && title!=='Namaste Bengalooru' && body!=='Start your blog here') {
             const res = await fetch('https://sma13.herokuapp.com/profilecblog', {
                 method:'POST',
+                mode:'no-cors',
                 headers:{'Content-Type':'application/json'},
                 body: JSON.stringify({
                     email,
@@ -61,6 +63,7 @@ const Profile = ({email}) => {
     const btn = async () => {
         const res = await fetch('https://sma13.herokuapp.com/profile', {
             method:'POST',
+            mode:'no-cors',
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify({
                 email,

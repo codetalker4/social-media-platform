@@ -9,6 +9,7 @@ const [data,setdata] = useState('')
 const btn = async () => {
     const res = await fetch('https://sma13.herokuapp.com/',{
         method:'POST',
+        mode:'no-cors',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify({
             welcome:'welcome'
