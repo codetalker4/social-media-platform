@@ -13,7 +13,7 @@ const Wordbot = () => {
     var gword
 
     const clk = async (e) => {
-        await fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/wbot', {
+        await fetch('https://sma13.herokuapp.com/wbot', {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ const Wordbot = () => {
         })
     }
     const clk1 = async () => {
-        const res = await fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/wbot/test')
+        const res = await fetch('https://sma13.herokuapp.com/wbot/test')
         const data = JSON.parse(await res.json())
         setgameword(data)
     }

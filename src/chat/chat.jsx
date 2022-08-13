@@ -4,7 +4,7 @@ import { useState } from "react";
 import io from 'socket.io-client'
 import './style.css'
 
-const socket = io('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com')
+const socket = io('https://sma13.herokuapp.com/')
 
 const Chat = ({email}) => {
     const [toggle,settoggle] = useState(false)
@@ -16,7 +16,7 @@ const Chat = ({email}) => {
     console.log(window.localStorage.getItem('email'))
     
     const rooms = async () => {
-        const res = await fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/room1',{
+        const res = await fetch('https://sma13.herokuapp.com/room1',{
             method:'POST',
             headers:{'Content-Type': 'application/json'}
         })
@@ -77,7 +77,7 @@ const Chat = ({email}) => {
                                     socket.emit('joinroom', {email: email,room: document.getElementById('room').value})
                                     setroom(document.getElementById('room').value)
                                     settoggle(true)
-                                    const res = await fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/room1', {
+                                    const res = await fetch('https://sma13.herokuapp.com/room1', {
                                         method: 'POST',
                                         headers: {'Content-Type':'application/json'},
                                         body: JSON.stringify({
@@ -100,7 +100,7 @@ const Chat = ({email}) => {
                                             room: document.getElementById('roomname').value,
                                             email:email
                                         })
-                                        const res = await fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/room1',{
+                                        const res = await fetch('https://sma13.herokuapp.com/room1',{
                                             method:'POST',
                                             headers: {'Content-Type': 'application/json'},
                                             body: JSON.stringify({

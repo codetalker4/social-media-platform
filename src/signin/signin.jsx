@@ -11,7 +11,7 @@ const Signin = ({islogged, fetchemail}) => {
     const navigate = useNavigate()
 
     const clk = async () => {
-        const res = await fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/signin',{
+        const res = await fetch('https://sma13.herokuapp.com/signin',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({

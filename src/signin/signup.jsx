@@ -68,7 +68,7 @@ const Signup = () => {
                 async (e) => {
                     e.preventDefault();
                     if (match && stat) {
-                            fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/signup', {
+                            fetch('https://sma13.herokuapp.com/signup', {
                                 method:'POST',
                                 headers:{
                                     'Content-Type': 'application/json'

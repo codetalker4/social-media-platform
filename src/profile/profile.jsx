@@ -17,7 +17,7 @@ const Profile = ({email}) => {
 
     const clk = async () => {
         if (name.length > 5) {
-            const res = await fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/profileedit', {
+            const res = await fetch('https://sma13.herokuapp.com/profileedit', {
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body: JSON.stringify({
@@ -45,7 +45,7 @@ const Profile = ({email}) => {
         settitle(document.getElementById('title').value)
         setbody(document.getElementById('comment_text').value)
         if (title.length > 5 && body.length > 10 && title!=='Namaste Bengalooru' && body!=='Start your blog here') {
-            const res = await fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/profilecblog', {
+            const res = await fetch('https://sma13.herokuapp.com/profilecblog', {
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body: JSON.stringify({
@@ -59,7 +59,7 @@ const Profile = ({email}) => {
         }
     }
     const btn = async () => {
-        const res = await fetch('http://ec2-52-49-120-150.eu-west-1.compute.amazonaws.com/profile', {
+        const res = await fetch('https://sma13.herokuapp.com/profile', {
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify({
